@@ -1,0 +1,21 @@
+items:
+  - number: "01"
+    name: "Appel Découverte"
+    description: "30 minutes pour faire connaissance, parler de ta situation et voir si on est faites pour avancer ensemble."
+    includes: "Appel visio, Diagnostic rapide, Questions/réponses"
+    price: "Gratuit"
+    featured: false
+    
+  - number: "02"
+    name: "Programme Racines"
+    description: "3 mois d'accompagnement pour sortir des régimes et installer l'alimentation intuitive dans ta vie quotidienne."
+    includes: "6 séances individuelles, Support WhatsApp, Exercices personnalisés"
+    price: "2000€"
+    featured: true
+    
+  - number: "03"
+    name: "Accompagnement Épanouie"
+    description: "6 mois pour transformer profondément ta relation à ton corps et à l'alimentation. Un voyage vers la liberté."
+    includes: "12 séances individuelles, Accompagnement illimité, Méditations guidées"
+    price: "2000€"
+    featured: false

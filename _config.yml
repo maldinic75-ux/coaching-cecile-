@@ -1,0 +1,21 @@
+# Configuration Jekyll
+title: "WeightSHift - Coaching Acceptation de Soi"
+description: "Coach en acceptation de soi et alimentation intuitive"
+baseurl: ""
+url: ""
+
+# Collections
+collections:
+  testimonials:
+    output: false
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+
+# Exclusions
+exclude:
+  - admin/
+  - Gemfile
+  - Gemfile.lock
+  - README.md

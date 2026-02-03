@@ -1,0 +1,10 @@
+cards:
+  - icon: "fa-scale-balanced"
+    title: "La balance dictatrice"
+    description: "Ton humeur dépend du chiffre affiché. Tu te pèses tous les matins et ça détermine si tu as le droit de t'aimer aujourd'hui."
+  - icon: "fa-utensils"
+    title: "La bouffe ennemie"
+    description: "Tu passes ta journée à penser à ce que tu vas manger, à te restreindre, puis à craquer et culpabiliser."
+  - icon: "fa-mirror"
+    title: "Le miroir critique"
+    description: "Tu évites ton reflet, tu détestes te voir en photo, tu reportes ta vie 'à quand tu maigriras'."

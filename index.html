@@ -1,0 +1,162 @@
+---
+layout: default
+title: Accueil
+---
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="#" class="logo">{{ site.data.settings.site_name }}</a>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#approche">Mon approche</a></li>
+            <li><a href="#programmes">Programmes</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="accueil">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>{{ site.data.hero.title | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
+            <p>{{ site.data.hero.description }}</p>
+            <div>
+                <a href="#programmes" class="btn">{{ site.data.hero.button1 }}</a>
+                <a href="#contact" class="btn btn-outline">{{ site.data.hero.button2 }}</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="cec.jpeg" alt="Portrait de {{ site.data.settings.coach_name }}">
+        </div>
+    </div>
+</section>
+
+<!-- Section Problème -->
+<section class="problem" id="approche">
+    <h2 class="section-title">Tu reconnais ça ?</h2>
+    <p class="section-subtitle">Tu n'es pas seule. La plupart de mes clientes vivaient ça avant de me rencontrer.</p>
+    
+    <div class="problem-grid">
+        {% for card in site.data.problems.cards %}
+        <div class="problem-card">
+            <div class="problem-icon">
+                <i class="fas {{ card.icon }}"></i>
+            </div>
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Section Solution -->
+<section class="solution">
+    <div class="solution-container">
+        <div class="solution-content">
+            <h2>{{ site.data.solution.title | markdownify | remove: '<p>' | remove: '</p>' }}</h2>
+            <p>{{ site.data.solution.body }}</p>
+            
+            <ul class="solution-list">
+                {% for point in site.data.solution.points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+            
+            <a href="#programmes" class="btn" style="margin-top: 2rem;">Je veux en savoir plus</a>
+        </div>
+        <div class="solution-image" style="text-align: center;">
+            <div style="background: linear-gradient(135deg, var(--rose) 0%, var(--beige) 100%); padding: 3rem; border-radius: 50%; width: 400px; height: 400px; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--text);">
+                    "Ton corps n'est pas un problème à résoudre,<br>c'est le compagnon de toute ta vie.<br>Traite-le avec amour."
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Services -->
+<section class="services" id="programmes">
+    <h2 class="section-title">Mes accompagnements</h2>
+    <p class="section-subtitle">Un coaching doux, sans jugement, qui t'accompagne à ton rythme.</p>
+    
+    <div class="services-grid">
+        {% for service in site.data.services.items %}
+        <div class="service-card {% if service.featured %}featured{% endif %}">
+            <span class="service-number">{{ service.number }}</span>
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <div style="margin: 1rem 0; font-size: 0.9rem; color: var(--text-light);">
+                {% assign includes = service.includes | split: ", " %}
+                {% for item in includes %}
+                <span style="color: var(--terracotta);">✦</span> {{ item }}<br>
+                {% endfor %}
+            </div>
+            <div class="price">{{ service.price }}</div>
+            <a href="#contact" class="btn" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">En savoir plus</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Témoignages -->
+<section class="testimonials" id="temoignages">
+    <h2 class="section-title">Elles l'ont fait</h2>
+    <p class="section-subtitle">Des femmes comme toi qui ont choisi la paix.</p>
+    
+    <div class="testimonials-container">
+        <div class="testimonial-slider">
+            {% for testimonial in site.data.testimonials %}
+            <div class="testimonial {% if forloop.first %}active{% endif %}">
+                <p class="quote">"{{ testimonial.quote }}"</p>
+                <p class="author">— {{ testimonial.author }}{% if testimonial.age %}, {{ testimonial.age }}{% endif %}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+    <h2>{{ site.data.cta.title }}</h2>
+    <p>{{ site.data.cta.subtitle }}</p>
+    <a href="mailto:{{ site.data.cta.email }}" class="btn">{{ site.data.cta.button }}</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1rem;">{{ site.data.settings.coach_name }}</p>
+    <p style="margin-bottom: 2rem; opacity: 0.8;">Coach en acceptation de soi & alimentation intuitive</p>
+    
+    <div class="social-links">
+        {% if site.data.settings.instagram %}
+        <a href="{{ site.data.settings.instagram }}"><i class="fab fa-instagram"></i></a>
+        {% endif %}
+        {% if site.data.settings.facebook %}
+        <a href="{{ site.data.settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
+        {% endif %}
+        {% if site.data.settings.tiktok %}
+        <a href="{{ site.data.settings.tiktok }}"><i class="fab fa-tiktok"></i></a>
+        {% endif %}
+        <a href="mailto:{{ site.data.settings.email }}"><i class="fas fa-envelope"></i></a>
+    </div>
+    
+    <p style="font-size: 0.9rem; opacity: 0.6;">© {{ site.time | date: '%Y' }} - Tous droits réservés</p>
+</footer>
+
+<script>
+    // Slider témoignages simple
+    const testimonials = document.querySelectorAll('.testimonial');
+    let current = 0;
+    
+    setInterval(() => {
+        testimonials[current].classList.remove('active');
+        current = (current + 1) % testimonials.length;
+        testimonials[current].classList.add('active');
+    }, 5000);
+</script>
