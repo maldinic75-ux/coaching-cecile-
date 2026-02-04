@@ -4,6 +4,10 @@ description: "Coach en acceptation de soi et alimentation intuitive"
 baseurl: ""
 url: ""
 
+# IMPORTANT : Inclure le dossier admin
+include:
+  - admin
+
 # Collections
 collections:
   testimonials:
@@ -15,7 +19,6 @@ plugins:
 
 # Exclusions
 exclude:
-  - admin/
   - Gemfile
   - Gemfile.lock
   - README.md
